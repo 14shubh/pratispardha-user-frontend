@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserAuthService } from 'src/app/services/user-auth.service';
 import { User} from '../../model/user'
 
@@ -10,13 +11,15 @@ import { User} from '../../model/user'
 })
 export class SignupComponent implements OnInit {
   user:User = new User('','','','','');
-  constructor(private _userAuth: UserAuthService) { }
+  constructor(private _userAuth: UserAuthService, private _router: Router) { }
 
   public playerType(event:any){
      this.user.playerType = event.target.value;
      
   }
-  
+  public sign_in_page(){
+    this._router.navigate(['sign-in']);
+  }
   public SignUp(){
     if(this.user.playerType=="0")
      alert("Please Select the type")
