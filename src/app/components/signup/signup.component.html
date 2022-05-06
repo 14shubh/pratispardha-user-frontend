@@ -1,0 +1,62 @@
+<div class="container">
+    <div class="row ${1| ,row-cols-2,row-cols-3, auto,justify-content-md-center,|} signup-box">
+        <div class="col-md-5 left">
+            <img src="../../../assets/images/virat-img-blur.png" alt="poster" class="img-fluid">
+        </div>
+        <div class="col-md-7 right">
+            <div class="input-box">
+                <div class="title">
+                    <h3>Sign Up</h3>
+                </div>
+                <div class="input-area">
+                    <div class="form-group">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" required #name="ngModel" [(ngModel)]="user.name" name="name" id="name" class="form-control" placeholder="Name"
+                            aria-describedby="helpId">
+                        <small id="helpId" *ngIf="name.errors?.['required'] && name.touched" >Please enter name</small>
+                    </div>
+                    <div class="form-group">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" required #email="ngModel" [(ngModel)]="user.email" name="email" id="email" class="form-control" placeholder="Email"
+                            aria-describedby="helpId">
+                        <small id="helpId" *ngIf="email.errors?.['required'] && email.touched" >Please enter email</small>
+                    </div>
+                    <div class="form-group">
+                        <i class="fa-solid fa-unlock-keyhole"></i>
+                        <input type="password" required #pass="ngModel" [(ngModel)]="user.password" name="password" id="password" class="form-control" placeholder="Password"
+                            aria-describedby="helpId">
+                        <small id="helpId" *ngIf="pass.errors?.['required'] && pass.touched" >Please enter password</small>
+                    </div>
+                    <div class="form-group">
+                        <i class="fa-solid fa-mobile"></i>
+                        <input type="phone" required #mobile="ngModel" [(ngModel)]="user.mobile" name="mobile" id="mobile" class="form-control" placeholder="Mobile"
+                            aria-describedby="helpId">
+                        <small  id="helpId" *ngIf="mobile.errors?.['required'] && mobile.touched" >Please enter mobile</small>
+                    </div>
+                    <div class="form-group">
+                        <i class="fa-solid fa-user-plus"></i>
+                        <select (change)="playerType($event)" required name="player_type" id="player-type" class="form-select">
+                            <option name="select" value="0">Select an option</option>
+                            <option value="right-hand-batsman">Right Hand Batman</option>
+                            <option value="left-hand-batsman">Left Hand Batman</option>
+                            <option value="right-hand-fast-baller">Right Hand Fast Baller</option>
+                            <option value="left-hand-fast-baller">Left Hand Fast Baller</option>
+                            <option value="right-hand-medium-baller">Right Hand Medium Baller</option>
+                            <option value="left-hand-medium-baller">Left Hand Medium Baller</option>
+                            <option value="leg-break-spinner">Leg Break Spinner</option>
+                            <option value="off-break-spinner">Off Break Spinner</option>
+                            <option value="wecatkeeper">Wecatkeeper</option>
+                        </select>
+                        <!-- <small id="helpId" class="text-muted">Help text</small> -->
+                    </div>
+                    <div class="sign-up-btn">
+                        <a (click)="SignUp()" class=" sign-up">Sign Up</a>
+                    </div>
+                </div>
+                <div class="old-user">
+                    <p>Already have an account ? <a href="#">Sign In</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
