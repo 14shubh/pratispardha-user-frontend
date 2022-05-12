@@ -1,8 +1,7 @@
-
 <div class="container">
-    <div class="row ${1| ,row-cols-2,row-cols-3, auto,justify-content-md-center,|} signup-box">
+    <div class="row ${1| ,row-cols-2,row-cols-3, auto,justify-content-md-center,|} signin-box">
         <div class="col-md-5 left">
-            <img src="../../../assets/images/virat-img-blur.png" alt="poster" class="img-fluid">
+            <img src="../../../assets/images/virat-img-non-blur.png" alt="poster" class="img-fluid" />
         </div>
         <div class="col-md-7 right">
             <div class="input-box">
@@ -10,34 +9,35 @@
                     <h3>Sign In</h3>
                 </div>
 
-                <div class="google-sign-in">
-                    <a class="google-btn"><i class="fa fa-google" aria-hidden="true"></i> Sign In With Google</a>
+                <div class="google-sign-in" (click)="signinWithGoogle()">
+                    <a class="google-btn"><i class="fa fa-google" aria-hidden="true"></i> Sign In With
+                        Google</a>
                 </div>
                 <span class="or">
                     <p>OR</p>
                 </span>
                 <div class="input-area">
-                    
                     <div class="form-group">
                         <i class="fa-solid fa-envelope"></i>
-                        <input type="email" required #email="ngModel" [(ngModel)]="user.email" name="email" id="email" class="form-control" placeholder="Email"
-                            aria-describedby="helpId">
-                        <small id="helpId" *ngIf="email.errors?.['required'] && email.touched" class="text-muted">Please enter email</small>
+                        <input type="email" required #email="ngModel" [(ngModel)]="user.email" name="email" id="email"
+                            class="form-control" placeholder="Email" aria-describedby="helpId" />
+                        <small id="helpId" *ngIf="email.errors?.['required'] && email.touched" class="text-muted">Please
+                            enter email</small>
                     </div>
                     <div class="form-group">
                         <i class="fa-solid fa-unlock-keyhole"></i>
-                        <input type="password" required #pass="ngModel" [(ngModel)]="user.password" name="password" id="password" class="form-control" placeholder="Password"
-                            aria-describedby="helpId">
-                        <small id="helpId" *ngIf="pass.errors?.['required'] && pass.touched" class="text-muted">Please enter password</small>
+                        <input type="password" required #pass="ngModel" [(ngModel)]="user.password" name="password"
+                            id="password" class="form-control" placeholder="Password" aria-describedby="helpId" />
+                        <small id="helpId" *ngIf="pass.errors?.['required'] && pass.touched" class="text-muted">Please
+                            enter password</small>
                     </div>
-                    
-                    
+
                     <div class="sign-up-btn">
                         <a (click)="SignIn()" class="sign-up">Sign In</a>
                     </div>
                 </div>
                 <div class="old-user">
-                    <p>New account ? <a (click)="sign_up_page()" >Sign Up</a></p>
+                    <p>New account ? <a (click)="sign_up_page()">Sign Up</a></p>
                 </div>
             </div>
         </div>

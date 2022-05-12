@@ -1,0 +1,91 @@
+.event-wrapper{
+    padding: 5rem 0;
+}
+.left, .right, .other-info {
+    padding: 2rem 5rem;
+}
+.left .event-image img{
+    width: 100%;
+    height: 100%;
+}
+
+.right .event-details{
+    padding:1.5rem 0;
+}
+.right .event-details .event-title h2{
+    font-size: 2.8rem;
+}
+.right .event-details .event-content p, .right .event-details .event-orgnizer p, .right .event-details .location p{
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    font-weight:500;
+}
+.right .event-details .event-content, .right .event-details .event-orgnizer{
+    margin: 3rem 0;
+}
+.right .event-details .event-content p i, .right .event-details .event-orgnizer p i, .right .event-details .location p i{
+    margin-right: 2rem;
+}
+/* .right .event-details .event-content p */
+
+.right .event-details .event{
+    display:flex;
+}
+
+.right .event-details .event i{
+    font-size:1.7rem;
+    margin-right: 2rem;
+    line-height:1.5;
+
+}
+.right .event-details .location{
+    margin-bottom: 2rem;
+}
+.right .event-details .note{
+    font-size:1.6rem;
+    font-weight:500;
+    text-transform: capitalize;
+}
+
+.other-info .heading{
+    position: relative;
+    width: fit-content;
+}
+.other-info .heading::before{
+    content:" ";
+    position: absolute;
+    top: 35px;
+    left: 0;
+    width: 100%;
+    height:2px;
+    background-color:rgb(164, 164, 164);
+}
+.other-info .heading h3{
+    font-size:2.4rem;
+    margin-bottom:1.5rem ;
+    font-weight: 600;
+}
+.other-info .content{
+    font-size:1.6rem;
+    line-height: 3.5rem;
+    font-weight:500;
+    padding:1.5rem 2.5rem;
+       
+}
+.other-info .event-info{
+    border-bottom: 1px solid #c2c2c2;
+    width:100%;
+}
+.other-info .event-rules{
+    margin:3.5rem 0;
+}
+.event-data{
+    margin-bottom:5rem;
+}
+.border{
+    width: 92%;
+    margin: auto;
+    height: 2px;
+    background-color: #c2c2c2;
+    position: relative;
+}

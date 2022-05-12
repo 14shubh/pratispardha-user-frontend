@@ -1,0 +1,165 @@
+.players-list{
+    padding:5rem 0;
+}
+.heading{
+    text-align: center;
+    width: fit-content;
+    position: relative;
+    margin: auto;
+}
+.heading h1{
+    font-size:3rem;
+    text-transform: uppercase;
+}
+.heading .border{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: rgb(44, 44, 44);
+}
+.heading .border::before{
+    content: " ";
+    position: absolute;
+    top: -2px;
+    left: 50%;
+    width: 20%;
+    height: 6px;
+    background-color: rgb(255, 255, 255);
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    z-index: 1;
+}
+.heading .border::after{
+    content:"";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height:10px;
+    width:10px;
+    background-color:rgb(44, 44, 44);
+    transform: translate(-50%) rotate(45deg);
+    -webkit-transform: translate(-50%) rotate(45deg);
+    -moz-transform: translate(-50%) rotate(45deg);
+    -ms-transform: translate(-50%) rotate(45deg);
+    -o-transform: translate(-50%) rotate(45deg);
+}
+
+
+.cards{
+    margin-top: 8rem;
+}
+.player-card{
+    margin-top:5rem;
+}
+.player-card .card{
+    width: 19rem;
+    padding-bottom: 2.2rem;
+    border: 0;
+    box-shadow: 0 0 10px rgba(75, 75, 75, 0.384);
+    border-radius: 3px !important;
+    -webkit-border-radius: 3px !important;
+    -moz-border-radius: 3px !important;
+    -ms-border-radius: 3px !important;
+    -o-border-radius: 3px !important;
+}
+.player-card .card:hover img{
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transition: 0.4s ease-in-out;
+    -webkit-transition: 0.4s ease-in-out;
+    -moz-transition: 0.4s ease-in-out;
+    -ms-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+}
+.player-card .card .card-img{
+    background: radial-gradient(79.51% 79.51% at 42.61% 20.49%, rgba(2, 66, 124, 0.6696) 36.46%, rgba(2, 66, 124, 0.93) 86.48%);
+    border-radius: 3px 3px 0 0!important;
+    -webkit-border-radius: 3px 3px 0 0!important;
+    -moz-border-radius: 3px 3px 0 0!important;
+    -ms-border-radius: 3px 3px 0 0!important;
+    -o-border-radius: 3px 3px 0 0!important;
+    max-height: 20rem;
+    height: 22rem;
+    /* margin-bottom: 2rem; */
+    padding-top :0.8rem;
+    overflow: hidden;
+}
+.player-card .card .card-img img{
+    width: 100%;
+    height: 100%;
+}
+.player-card .card .player-type{
+    background: #003D76;
+    text-align: center;
+    padding: .3rem;
+}
+.player-card .card .player-type small{
+    color: #fff;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+.player-card .card .card-body{
+    text-align: center;
+    margin: 0.7rem 0 4rem 0;
+}
+.player-card .card .card-body .card-text{
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing:1px;
+}
+.player-card .card .card-btn{
+    text-align: center;
+}
+.player-card .card .card-btn .profile{
+    padding: 0.5rem 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #333;
+    border: 1px solid rgb(0, 140, 234);
+    text-decoration: none;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    position: relative;
+    cursor: pointer;
+    z-index: 2;
+}
+.player-card .card .card-btn .profile::before{
+    content:"";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background:var(--blue-radial-gradient);
+    z-index: -1;
+    transition: 0.4s ease-in-out;
+    -webkit-transition: 0.4s ease-in-out;
+    -moz-transition: 0.4s ease-in-out;
+    -ms-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+}
+.player-card .card .card-btn .profile:hover{
+    color: #fff;
+}
+.player-card .card .card-btn .profile:hover::before{
+    width: 100%;
+}
+
+.pagination{
+    margin:8rem 0; 
+}
+.pagination pagination-controls{
+    font-size:1.4rem;
+    font-weight:600;
+}

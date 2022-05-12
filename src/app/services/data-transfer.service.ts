@@ -1,0 +1,16 @@
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class DataTransferService {
+
+  constructor() { }
+  data:any;
+  public setData(data:any){
+    this.data=data;
+  }
+  public getData(){
+    return this.data;
+  }
+}
