@@ -33,3 +33,48 @@
 .navbar .right-nav .nav-item .nav-link .user-icon{
     font-size: 24px;
 }
+
+@media screen and (max-width:1400px) {
+    .navbar .navbar-brand{
+        font-size: 22px;
+    }
+    .navbar #collapsibleNavId .navbar-nav .nav-item .nav-link{
+        font-size:14px;
+    }
+    .navbar #collapsibleNavId .navbar-nav .nav-item{
+        margin-right: 15px;
+    }
+    .right-nav{
+        justify-content: center;
+        align-items: center;
+    }
+    .right-nav .nav-item{
+        margin-right: 15px;
+    }
+    .right-nav .nav-item .nav-link{
+        font-size:14px;
+    }
+    
+}
+@media screen and (max-width:1200px) {
+    .navbar .navbar-brand{
+        font-size: 20px;
+    }
+    .navbar #collapsibleNavId .navbar-nav .nav-item .nav-link{
+        font-size:12px;
+    }
+    .navbar #collapsibleNavId .navbar-nav .nav-item{
+        margin-right: 15px;
+    }
+    .right-nav{
+        justify-content: center;
+        align-items: center;
+    }
+    .right-nav .nav-item{
+        margin-right: 15px;
+    }
+    .right-nav .nav-item .nav-link{
+        font-size:12px;
+    }
+    
+}

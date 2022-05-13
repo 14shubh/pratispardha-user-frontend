@@ -1,5 +1,5 @@
 .players-list{
-    padding:5rem 0;
+    padding:50px 0;
 }
 .heading{
     text-align: center;
@@ -8,7 +8,7 @@
     margin: auto;
 }
 .heading h1{
-    font-size:3rem;
+    font-size:30px;
     text-transform: uppercase;
 }
 .heading .border{
@@ -50,14 +50,14 @@
 
 
 .cards{
-    margin-top: 8rem;
+    margin-top: 80px;
 }
 .player-card{
-    margin-top:5rem;
+    margin-top:50px;
 }
 .player-card .card{
-    width: 19rem;
-    padding-bottom: 2.2rem;
+    width: 100%;
+    padding-bottom: 22px;
     border: 0;
     box-shadow: 0 0 10px rgba(75, 75, 75, 0.384);
     border-radius: 3px !important;
@@ -85,10 +85,9 @@
     -moz-border-radius: 3px 3px 0 0!important;
     -ms-border-radius: 3px 3px 0 0!important;
     -o-border-radius: 3px 3px 0 0!important;
-    max-height: 20rem;
-    height: 22rem;
-    /* margin-bottom: 2rem; */
-    padding-top :0.8rem;
+    max-height: 200px;
+    height: 220px;
+    padding-top :8px;
     overflow: hidden;
 }
 .player-card .card .card-img img{
@@ -98,19 +97,19 @@
 .player-card .card .player-type{
     background: #003D76;
     text-align: center;
-    padding: .3rem;
+    padding: 3px;
 }
 .player-card .card .player-type small{
     color: #fff;
-    font-size: 1.1rem;
+    font-size: 11px;
     letter-spacing: 1px;
 }
 .player-card .card .card-body{
     text-align: center;
-    margin: 0.7rem 0 4rem 0;
+    margin: 7px 0 40px 0;
 }
 .player-card .card .card-body .card-text{
-    font-size: 1.1rem;
+    font-size: 11px;
     font-weight: 500;
     letter-spacing:1px;
 }
@@ -118,8 +117,8 @@
     text-align: center;
 }
 .player-card .card .card-btn .profile{
-    padding: 0.5rem 1.5rem;
-    font-size: 1.3rem;
+    padding: 5px 15px;
+    font-size: 13px;
     font-weight: 600;
     letter-spacing: 1px;
     color: #333;
@@ -157,9 +156,9 @@
 }
 
 .pagination{
-    margin:8rem 0; 
+    margin:80px 0; 
 }
 .pagination pagination-controls{
-    font-size:1.4rem;
+    font-size:14px;
     font-weight:600;
 }
