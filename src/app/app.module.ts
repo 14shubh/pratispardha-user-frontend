@@ -16,6 +16,8 @@ import { CommonModule } from '@angular/common';
 import { PlayerListComponent } from './components/player-list/player-list.component';
 import { ViewProfileComponent } from './components/view-profile/view-profile.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { AboutComponent } from './components/about/about.component';
+import { ContactComponent } from './components/contact/contact.component';
 const socialProvider={
   provide:"SocialAuthServiceConfig",
   useValue:{
@@ -37,7 +39,9 @@ const socialProvider={
     EventsComponent,
     EventDetailsComponent,
     PlayerListComponent,
-    ViewProfileComponent
+    ViewProfileComponent,
+    AboutComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,5 +55,5 @@ const socialProvider={
   bootstrap: [AppComponent]
 })
 export class AppModule { }
- 
+
 

@@ -8,15 +8,26 @@ import { SigninComponent } from './components/signin/signin.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { EventDetailsComponent } from './components/event-details/event-details.component';
 import { ViewProfileComponent } from './components/view-profile/view-profile.component';
+import { AboutComponent } from './components/about/about.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 const routes: Routes = [
   {
     path:'',
     component: HomeComponent,
   },
+
   {
     path:'home',
     component: HomeComponent,
+  },
+  {
+    path:'about-us',
+    component:AboutComponent,
+  },
+  {
+    path:'contact',
+    component:ContactComponent,
   },
   {
     path:'sign-in',
