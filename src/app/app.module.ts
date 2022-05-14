@@ -16,6 +16,7 @@ import { CommonModule } from '@angular/common';
 import { PlayerListComponent } from './components/player-list/player-list.component';
 import { ViewProfileComponent } from './components/view-profile/view-profile.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { RegistrationFormComponent } from './components/registration-form/registration-form.component';
 const socialProvider={
   provide:"SocialAuthServiceConfig",
   useValue:{
@@ -37,7 +38,8 @@ const socialProvider={
     EventsComponent,
     EventDetailsComponent,
     PlayerListComponent,
-    ViewProfileComponent
+    ViewProfileComponent,
+    RegistrationFormComponent
   ],
   imports: [
     BrowserModule,

@@ -95,7 +95,7 @@
 }
 .sign-up-btn .sign-up:hover{
     color: #fff;
-    background: rgb(0, 117, 226);
+    background: var(--blue-radial-gradient);
     border: 0;
 }
 .old-user p{

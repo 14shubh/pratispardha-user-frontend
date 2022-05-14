@@ -18,7 +18,7 @@ export class SigninComponent implements OnInit {
     this._router.navigate(['/sign-up']);
   }
  
-  user:User = new User('','','','','');
+  user:User = new User('','','','','','','','','','','','','','');
  
   public SignIn(){
     this._userAuth.login(this.user).subscribe((data) => {
