@@ -10,7 +10,8 @@ import { User} from '../../model/user'
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-  user:User = new User('','','','','');
+  user:User = new User('','','','','','','','','','','','','','');
+
   constructor(private _userAuth: UserAuthService, private _router: Router) { }
 
   public playerType(event:any){

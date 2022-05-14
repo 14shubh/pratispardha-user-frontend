@@ -24,6 +24,9 @@
     font-weight: 600;
     color: #fff;
 }
+.navbar .right-nav{
+    align-items: center;
+}
 .navbar .right-nav .nav-item{
     margin-right:20px;
 }
@@ -32,4 +35,74 @@
 }
 .navbar .right-nav .nav-item .nav-link .user-icon{
     font-size: 24px;
+}
+
+@media screen and (min-width:1200px) and (max-width:1400px) {
+    .navbar .navbar-brand{
+        font-size: 22px;
+    }
+    .navbar #collapsibleNavId .navbar-nav .nav-item .nav-link{
+        font-size:14px;
+    }
+    .navbar #collapsibleNavId .navbar-nav .nav-item{
+        margin-right: 15px;
+    }
+    .right-nav{
+        justify-content: center;
+        align-items: center;
+    }
+    .right-nav .nav-item{
+        margin-right: 15px;
+    }
+    .right-nav .nav-item .nav-link{
+        font-size:14px;
+    }
+    
+}
+@media screen and (min-width:992px) and (max-width:1199px) {
+    .navbar .navbar-brand{
+        font-size: 20px;
+    }
+    .navbar #collapsibleNavId .navbar-nav .nav-item .nav-link{
+        font-size:12px;
+    }
+    .navbar #collapsibleNavId .navbar-nav .nav-item{
+        margin-right: 15px;
+    }
+    .right-nav{
+        justify-content: center;
+        align-items: center;
+    }
+    .right-nav .nav-item{
+        margin-right: 15px;
+    }
+    .right-nav .nav-item .nav-link{
+        font-size:12px;
+    }
+    
+}
+@media screen and (max-width:992px){
+
+    .navbar #collapsibleNavId .navbar-nav{
+        width:fit-content;
+        text-align: center;
+    }
+    .navbar #collapsibleNavId .right-nav{
+        margin: auto;
+    }
+    .navbar #collapsibleNavId ul li{
+        margin: 10px;        
+    }
+    .navbar #collapsibleNavId .navbar-nav .nav-item .nav-link{
+        letter-spacing: 3px;
+    }
+    .navbar #collapsibleNavId ul li a:hover{
+        
+        color: #333;
+        transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        -o-transform: scale(1.1);
+}
 }

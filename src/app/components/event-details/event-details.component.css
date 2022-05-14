@@ -47,6 +47,15 @@
     text-transform: capitalize;
 }
 
+.right .register-btn .register{
+    background: var(--blue-radial-gradient);
+    text-decoration: none;
+    font-size: 14px;
+    padding : 5px 20px;
+    color: #fff;
+    cursor: pointer;
+}
+
 .other-info .heading{
     position: relative;
     width: fit-content;

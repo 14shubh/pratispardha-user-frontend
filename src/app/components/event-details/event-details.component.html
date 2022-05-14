@@ -12,27 +12,31 @@
     <div class="col-md-6 right">
       <div class="event-details">
         <div class="event-title">
-          <h2>Cricket championship</h2>
+          <h2>{{event.tournamentName}}</h2>
         </div>
         <div class="event-content event">
           <i class="fa fa-calendar" aria-hidden="true"></i>
 
           <div class="event-date">
             <p>Registration date</p>
-            <p>Start: 6 may 22 | End:11 may 22</p>
+            <p>Start:{{event.tournamentApplyDate|date:'dd-MM-yyyy'}}| End:{{event.tournamentEndDate|date:'dd-MM-yyyy'}}</p>
 
-            <p>Tournament date : 12 May 22</p>
+            <p>Tournament date :{{event.tournamentApplyDate|date:'dd-MM-yyyy'}}</p>
           </div>
         </div>
         <div class="event-orgnizer event">
           <i class="fas fa-user-tie"></i>
-          <p>organiser : Indore association</p>
+          <p>organiser : {{event.orgainiserId.name}}</p>
         </div>
         <div class="location event">
           <i class="fa fa-location-arrow" aria-hidden="true"></i>
-          <p>Venue : Indore</p>
+          <p>Venue :{{event.tournamentAddress}}</p>
         </div>
-        <span class="note">each team will pay 800/- as participating fee.</span>
+        <span class="note">each team will pay {{event.tournamentFees}}/- as participating fee.</span>
+      </div>
+
+      <div class="register-btn">
+        <a class="register"  (click)="register(event.Id)">Register</a>
       </div>
     </div>
   </div>
@@ -78,9 +82,9 @@
       </div>
       <div class="content">
         <span>
-          1. winning team : cash prize 25,000/- +  designer trophy.<br>
-          2. Runner’s team : cash prize 15,000/- +  designer trophy.<br> 
-          3. Semi finalist : cash prize 500/- + Designer trophy. <br>
+          1. winning team : cash prize {{event.prizeAmount}}/- +  designer trophy.<br>
+          2. Runner’s team : cash prize {{event.prizeAmount*(3/4)}}/- +  designer trophy.<br> 
+          3. Semi finalist : cash prize {{event.prizeAmount/2}}/- + Designer trophy. <br>
         </span>
       </div>
     </div>

@@ -10,6 +10,8 @@ import { EventDetailsComponent } from './components/event-details/event-details.
 import { ViewProfileComponent } from './components/view-profile/view-profile.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { RegistrationFormComponent } from './components/registration-form/registration-form.component';
+
 
 const routes: Routes = [
   {
@@ -46,12 +48,16 @@ const routes: Routes = [
     component: PlayerListComponent,
   },
   {
-    path:'view-profile',
+    path:'view-profile/:playerId',
     component: ViewProfileComponent,
   },
   {
-    path:'event-details',
+    path:'event-details/:eventId',
     component: EventDetailsComponent,
+  },
+  {
+    path:'registration-form/:eventId/:userId',
+    component: RegistrationFormComponent,
   },
   {
     path:'**',

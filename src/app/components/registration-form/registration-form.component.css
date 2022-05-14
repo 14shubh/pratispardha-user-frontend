@@ -1,0 +1,25 @@
+.form{
+    padding: 50px 0;
+}
+.registration-form{
+    padding: 50px 0;
+}
+.registration-form .form-box .title h2{
+    margin-left: 320px;
+}
+.registration-form .form-box .form-group {
+    margin: 20px auto;
+    width:550px;
+}
+.registration-form .form-btn a{
+    background: var(--blue-radial-gradient);
+    margin-right: 50px;
+    padding: 8px 20px;
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+}
+.registration-form .form-btn{
+    margin: 60px 0;
+    text-align: center;
+}

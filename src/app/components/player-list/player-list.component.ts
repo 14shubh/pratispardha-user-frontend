@@ -25,10 +25,10 @@ export class PlayerListComponent implements OnInit {
       }) 
   }
 
-  public profile(data:any){
-    this.dataTransfer.setData(data);
-
-    this._router.navigate(['view-profile'])
+  public profile(playerId:string){
+    console.log(playerId)
+    this._router.navigate(['view-profile/'+playerId]);
+    
   }
 
 
