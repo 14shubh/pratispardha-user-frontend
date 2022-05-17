@@ -7,7 +7,7 @@ export class AuthenticateService {
  
   constructor() { }
   public checkToken(){
-    return !!localStorage.getItem('jwt_token');
+    return !!sessionStorage.getItem('jwt_token');
   }
 }
  

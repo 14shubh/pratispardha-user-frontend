@@ -7,12 +7,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-body{
    
 }
+
 :root{
     --blue-radial-gradient:radial-gradient(32.19% 4133.3% at 37.29% 50%, rgba(0, 31, 61, 0.92) 0%, rgba(2, 66, 124, 0.93) 100%);
+}
+body{
+    overflow-x: hidden;
 }
 .heading{
     text-align: center;
@@ -23,6 +25,7 @@ body{
 .heading h1{
     font-size:30px;
     text-transform: uppercase;
+    text-shadow: 0 5px 5px rgba(101, 101, 101, 0.24);
 }
 .heading .border{
     position: absolute;

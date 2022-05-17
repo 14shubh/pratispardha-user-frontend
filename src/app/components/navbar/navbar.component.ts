@@ -14,10 +14,13 @@ export class NavbarComponent implements OnInit {
    }
  
    public signout(){
-     localStorage.removeItem('jwt_token');
+     sessionStorage.removeItem('jwt_token');
      this._router.navigate(['sign-in']);
    }
  
+   public notify(notification:any){
+    notification.classList.toggle('active');
+   }
   ngOnInit(): void {
   }
  

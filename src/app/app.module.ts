@@ -12,7 +12,7 @@ import { FormsModule } from '@angular/forms';
 import {SocialLoginModule,GoogleLoginProvider} from 'angularx-social-login';
 import {HttpClientModule} from '@angular/common/http'
 import { BrowserModule } from '@angular/platform-browser';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { PlayerListComponent } from './components/player-list/player-list.component';
 import { ViewProfileComponent } from './components/view-profile/view-profile.component';
 import { NgxPaginationModule } from 'ngx-pagination';
@@ -21,6 +21,7 @@ import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 
 import { RegistrationFormComponent } from './components/registration-form/registration-form.component';
+import { HomComponent } from './components/hom/hom.component';
 
 const socialProvider={
   provide:"SocialAuthServiceConfig",
@@ -46,7 +47,8 @@ const socialProvider={
     ViewProfileComponent,
     AboutComponent,
     ContactComponent,
-    RegistrationFormComponent
+    RegistrationFormComponent,
+    HomComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +58,8 @@ const socialProvider={
     SocialLoginModule,
     NgxPaginationModule,
   ],
-  providers: [socialProvider],
+  providers: [socialProvider,
+  DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

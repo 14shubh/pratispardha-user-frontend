@@ -11,6 +11,7 @@ import { ViewProfileComponent } from './components/view-profile/view-profile.com
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { RegistrationFormComponent } from './components/registration-form/registration-form.component';
+import { HomComponent } from './components/hom/hom.component';
 
 
 const routes: Routes = [
@@ -44,7 +45,7 @@ const routes: Routes = [
     component: EventsComponent,
   },
   {
-    path:'player1-list',
+    path:'player-list',
     component: PlayerListComponent,
   },
   {
@@ -60,13 +61,17 @@ const routes: Routes = [
     component: RegistrationFormComponent,
   },
   {
+    path:'hom',
+    component:HomComponent
+  },
+  {
     path:'**',
     component:ErrorPageComponent
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{scrollPositionRestoration:'enabled'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

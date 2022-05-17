@@ -15,7 +15,7 @@
                     <a class="nav-link" routerLink="event">EVENTS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="player1-list">PLAYERS</a>
+                    <a class="nav-link" routerLink="player-list">PLAYERS</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" routerLink="about-us">ABOUT US</a>
@@ -34,8 +34,8 @@
                 <li *ngIf="isLoggedIn()" (click)="signout()" class="nav-item">
                     <a class="nav-link" routerLink="sign-out">SIGN OUT</a>
                 </li>
-                <li class="nav-item" *ngIf="isLoggedIn()">
-                    <a href="#" class="nav-link"> <i class="fa fa-bell" aria-hidden="true"></i></a>
+                <li class="nav-item" *ngIf="isLoggedIn()"  (click)="notify(notification)">
+                    <a class="nav-link"> <i class="fa fa-bell" aria-hidden="true"></i></a>
                 </li>
                 <li class="nav-item">
                     <a routerLink="user-profile" class="nav-link"><i class="fa fa-user-circle user-icon"
@@ -45,6 +45,116 @@
         </div>
     </div>
 </nav>
+
+
+
+<div class="notification-panel" #notification id="notification">
+    <div class="notification-title sticky-top">
+        <h2>Notifications</h2>
+        <span>Clear all</span>
+    </div>
+    <div class="notification-view">
+        <div class="notification-content">
+            <div class="user-image">
+                <img src="../../../assets/images/shubham.jpg" alt="user image" />
+            </div>
+            <div class="notification-msg">
+                <small><span>Shubham Burghate</span> is requesting to play in cricket tournament</small>
+                <div class="notification-btn">
+                    <a id="accept">Accept</a>
+                    <a id="reject">Reject</a>
+                </div>
+            </div>
+        </div>
+        <div class="notification-content">
+            <div class="user-image">
+                <img src="../../../assets/images/shubham.jpg" alt="user image" />
+            </div>
+            <div class="notification-msg">
+                <small><span>Shubham Burghate</span> is requesting to play in cricket tournament</small>
+                <div class="notification-btn">
+                    <a id="accept">Accept</a>
+                    <a id="reject">Reject</a>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="notification-content">
+            <div class="user-image">
+                <img src="../../../assets/images/shubham.jpg" alt="user image" />
+            </div>
+            <div class="notification-msg">
+                <small><span>Shubham Burghate</span> is requesting to play in cricket tournament</small>
+                <div class="notification-btn">
+                    <a id="accept">Accept</a>
+                    <a id="reject">Reject</a>
+                </div>
+            </div>
+        </div>
+        <div class="notification-content">
+            <div class="user-image">
+                <img src="../../../assets/images/shubham.jpg" alt="user image" />
+            </div>
+            <div class="notification-msg">
+                <small><span>Shubham Burghate</span> is requesting to play in cricket tournament</small>
+                <div class="notification-btn">
+                    <a id="accept">Accept</a>
+                    <a id="reject">Reject</a>
+                </div>
+            </div>
+        </div>
+        <div class="notification-content">
+            <div class="user-image">
+                <img src="../../../assets/images/shubham.jpg" alt="user image" />
+            </div>
+            <div class="notification-msg">
+                <small><span>Shubham Burghate</span> is requesting to play in cricket tournament</small>
+                <div class="notification-btn">
+                    <a id="accept">Accept</a>
+                    <a id="reject">Reject</a>
+                </div>
+            </div>
+        </div>
+        <div class="notification-content">
+            <div class="user-image">
+                <img src="../../../assets/images/shubham.jpg" alt="user image" />
+            </div>
+            <div class="notification-msg">
+                <small><span>Shubham Burghate</span> is requesting to play in cricket tournament</small>
+                <div class="notification-btn">
+                    <a id="accept">Accept</a>
+                    <a id="reject">Reject</a>
+                </div>
+            </div>
+        </div>
+        <div class="notification-content">
+            <div class="user-image">
+                <img src="../../../assets/images/shubham.jpg" alt="user image" />
+            </div>
+            <div class="notification-msg">
+                <small><span>Shubham Burghate</span> is requesting to play in cricket tournament</small>
+                <div class="notification-btn">
+                    <a id="accept">Accept</a>
+                    <a id="reject">Reject</a>
+                </div>
+            </div>
+        </div>
+        <div class="notification-content">
+            <div class="user-image">
+                <img src="../../../assets/images/shubham.jpg" alt="user image" />
+            </div>
+            <div class="notification-msg">
+                <small><span>Shubham Burghate</span> is requesting to play in cricket tournament</small>
+                <div class="notification-btn">
+                    <a id="accept">Accept</a>
+                    <a id="reject">Reject</a>
+                </div>
+            </div>
+        </div> -->
+    </div>
+</div>
+
+
+
 <!-- 
 <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #e3f2fd;">
     <a class="navbar-brand" href="#">Navbar</a>

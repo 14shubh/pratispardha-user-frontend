@@ -1,8 +1,8 @@
 .event-wrapper{
-    padding: 5rem 0;
+    padding: 50px 0;
 }
 .left, .right, .other-info {
-    padding: 2rem 5rem;
+    padding: 20px 50px;
 }
 .left .event-image img{
     width: 100%;
@@ -10,21 +10,21 @@
 }
 
 .right .event-details{
-    padding:1.5rem 0;
+    padding:15px 0;
 }
 .right .event-details .event-title h2{
-    font-size: 2.8rem;
+    font-size: 28px;
 }
 .right .event-details .event-content p, .right .event-details .event-orgnizer p, .right .event-details .location p{
-    font-size: 1.5rem;
+    font-size: 15px;
     letter-spacing: 1px;
     font-weight:500;
 }
 .right .event-details .event-content, .right .event-details .event-orgnizer{
-    margin: 3rem 0;
+    margin: 30px 0;
 }
 .right .event-details .event-content p i, .right .event-details .event-orgnizer p i, .right .event-details .location p i{
-    margin-right: 2rem;
+    margin-right: 20px;
 }
 /* .right .event-details .event-content p */
 
@@ -33,16 +33,16 @@
 }
 
 .right .event-details .event i{
-    font-size:1.7rem;
-    margin-right: 2rem;
+    font-size:17px;
+    margin-right: 20px;
     line-height:1.5;
 
 }
 .right .event-details .location{
-    margin-bottom: 2rem;
+    margin-bottom:20px;
 }
 .right .event-details .note{
-    font-size:1.6rem;
+    font-size:16px;
     font-weight:500;
     text-transform: capitalize;
 }
@@ -56,11 +56,11 @@
     cursor: pointer;
 }
 
-.other-info .heading{
+.other-info .info-heading{
     position: relative;
     width: fit-content;
 }
-.other-info .heading::before{
+.other-info .info-heading::before{
     content:" ";
     position: absolute;
     top: 35px;
@@ -69,16 +69,16 @@
     height:2px;
     background-color:rgb(164, 164, 164);
 }
-.other-info .heading h3{
-    font-size:2.4rem;
-    margin-bottom:1.5rem ;
+.other-info .info-heading h3{
+    font-size:24px;
+    margin-bottom:15px ;
     font-weight: 600;
 }
 .other-info .content{
-    font-size:1.6rem;
-    line-height: 3.5rem;
+    font-size:16px;
+    line-height: 35px;
     font-weight:500;
-    padding:1.5rem 2.5rem;
+    padding:15px 25px;
        
 }
 .other-info .event-info{
@@ -86,10 +86,10 @@
     width:100%;
 }
 .other-info .event-rules{
-    margin:3.5rem 0;
+    margin:35px 0;
 }
 .event-data{
-    margin-bottom:5rem;
+    margin-bottom:50px;
 }
 .border{
     width: 92%;
