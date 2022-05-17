@@ -47,38 +47,22 @@
 }
 .box{
   position: relative;
+  display: flex;
+  padding-top: 30px;
+  padding-bottom: 100px;
 }
-.contact_data .title h2{
-  font-size:2.4rem;
-  padding-left:2rem;
-
-}
-.contact_data .links .footer-links .footer-list{
-  font-weight:200;
-  list-style: none;
-}
-.contact_data .links .footer-links .footer-list i{
-  font-weight:bold;
-  margin-right:1.5rem;
-
-}
-.right .input-area .form-group input{
-  border: 0;
-  border-bottom: 1px solid rgb(215, 215, 215);
-  width: 300px;
-}
-.right .input-area .form-group .right-content{
-  float: right;
-}
-.textbox{
-  /* position: absolute; */
-  width: 645px;
-  height: 152px;
-  left: 548px;
-  top: 471px;
+ 
+/* .content_box{
+  position: absolute;
+  width: 345px;
+  height: 412px;
+  left: 116px;
+  background-color: #0052A3;
 }
 .name-email
 {
   display: flex;
   justify-content: space-evenly;
-}
+} */
+ 
+
