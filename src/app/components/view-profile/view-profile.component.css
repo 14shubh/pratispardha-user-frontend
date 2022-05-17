@@ -123,6 +123,6 @@
   background: rgba(176, 176, 176, 0.3);  
 }
 .right .player-info .text span:nth-child(2){
-    margin: auto;
-    text-align: left;
+    margin-left: auto;
+    
 }

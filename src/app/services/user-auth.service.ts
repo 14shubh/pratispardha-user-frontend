@@ -1,4 +1,5 @@
 import { HttpClient } from '@angular/common/http';
+import { StringMapWithRename } from '@angular/compiler/src/compiler_facade_interface';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { Team } from '../model/team';
@@ -38,8 +39,8 @@ export class UserAuthService {
     let url=this.serverUrl + "/view-profile/"+playerId;
     return this._http.get<any>(url);
   }
-  public requestPlayer(user:User):Observable<any>{
-    let url=this.serverUrl + "/request-player/"+user.playerId+"/"+user.teamId+"/"+user.tournamentId;
+  public requestPlayer(playerId:string,teamId:string,tournamentId:string):Observable<any>{
+    let url=this.serverUrl + "/request-player/"+playerId+"/"+teamId+"/"+tournamentId;
     return this._http.get<any>(url);
   }
   public acceptRequest(user:User):Observable<any>{
@@ -60,7 +61,6 @@ export class UserAuthService {
   }
   public viewTeamByOwnerId(ownerId:any):Observable<any>{
     let url=this.serverUrl + "/team/view-team-by-ownerId/"+ownerId;
-    alert('called...............')
     return this._http.get<any>(url);
   }
   public viewTeamList():Observable<any>{

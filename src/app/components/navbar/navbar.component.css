@@ -268,3 +268,11 @@
     -ms-transition: ease-in-out 0.1s;
     -o-transition: ease-in-out 0.1s;
 }
+
+.dropdown .dropdown-menu{
+    top:108% !important;
+    left: -86px !important;
+}
+.dropdown .dropdown-menu ul li{
+    list-style:disc;
+}

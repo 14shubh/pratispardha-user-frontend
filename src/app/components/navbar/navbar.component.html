@@ -31,22 +31,44 @@
                 <li *ngIf="!isLoggedIn()" class="nav-item">
                     <a class="nav-link" routerLink="sign-up">SIGNUP</a>
                 </li>
-                <li *ngIf="isLoggedIn()" (click)="signout()" class="nav-item">
+                <!-- <li *ngIf="isLoggedIn()" (click)="signout()" class="nav-item">
                     <a class="nav-link" routerLink="sign-out">SIGN OUT</a>
-                </li>
+                </li> -->
                 <li class="nav-item" *ngIf="isLoggedIn()"  (click)="notify(notification)">
                     <a class="nav-link"> <i class="fa fa-bell" aria-hidden="true"></i></a>
                 </li>
                 <li class="nav-item">
-                    <a routerLink="user-profile" class="nav-link"><i class="fa fa-user-circle user-icon"
-                    aria-hidden="true"></i></a>
+                    <!-- <a routerLink="user-profile" class="nav-link"><i class="fa fa-user-circle user-icon"
+                    aria-hidden="true"></i></a> -->
+
+                    <div class="dropdown">
+                       
+                        <a class="nav-link dropdown-toggle" role="button" id="dropdownMenuLink"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
+                                class="fa fa-user-circle user-icon" aria-hidden="true"></i></a>
+
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <ul>
+                                <li class="nav-item">
+                                    <a href="#" class="dropdown-item">Profile</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="dropdown-item">Teams</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="dropdown-item">Tournament history</a>
+                                </li>
+                                <li *ngIf="isLoggedIn()" (click)="signout()" class="nav-item">
+                                    <a class="nav-link" routerLink="sign-out">SIGN OUT</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
-
-
 
 <div class="notification-panel" #notification id="notification">
     <div class="notification-title sticky-top">
@@ -59,7 +81,8 @@
                 <img src="../../../assets/images/shubham.jpg" alt="user image" />
             </div>
             <div class="notification-msg">
-                <small><span>Shubham Burghate</span> is requesting to play in cricket tournament</small>
+                <small><span>Shubham Burghate</span> is requesting to play in cricket
+                    tournament</small>
                 <div class="notification-btn">
                     <a id="accept">Accept</a>
                     <a id="reject">Reject</a>
@@ -71,19 +94,8 @@
                 <img src="../../../assets/images/shubham.jpg" alt="user image" />
             </div>
             <div class="notification-msg">
-                <small><span>Shubham Burghate</span> is requesting to play in cricket tournament</small>
-                <div class="notification-btn">
-                    <a id="accept">Accept</a>
-                    <a id="reject">Reject</a>
-                </div>
-            </div>
-        </div>
-        <!-- <div class="notification-content">
-            <div class="user-image">
-                <img src="../../../assets/images/shubham.jpg" alt="user image" />
-            </div>
-            <div class="notification-msg">
-                <small><span>Shubham Burghate</span> is requesting to play in cricket tournament</small>
+                <small><span>Shubham Burghate</span> is requesting to play in cricket
+                    tournament</small>
                 <div class="notification-btn">
                     <a id="accept">Accept</a>
                     <a id="reject">Reject</a>
@@ -95,7 +107,8 @@
                 <img src="../../../assets/images/shubham.jpg" alt="user image" />
             </div>
             <div class="notification-msg">
-                <small><span>Shubham Burghate</span> is requesting to play in cricket tournament</small>
+                <small><span>Shubham Burghate</span> is requesting to play in cricket
+                    tournament</small>
                 <div class="notification-btn">
                     <a id="accept">Accept</a>
                     <a id="reject">Reject</a>
@@ -107,7 +120,8 @@
                 <img src="../../../assets/images/shubham.jpg" alt="user image" />
             </div>
             <div class="notification-msg">
-                <small><span>Shubham Burghate</span> is requesting to play in cricket tournament</small>
+                <small><span>Shubham Burghate</span> is requesting to play in cricket
+                    tournament</small>
                 <div class="notification-btn">
                     <a id="accept">Accept</a>
                     <a id="reject">Reject</a>
@@ -119,7 +133,8 @@
                 <img src="../../../assets/images/shubham.jpg" alt="user image" />
             </div>
             <div class="notification-msg">
-                <small><span>Shubham Burghate</span> is requesting to play in cricket tournament</small>
+                <small><span>Shubham Burghate</span> is requesting to play in cricket
+                    tournament</small>
                 <div class="notification-btn">
                     <a id="accept">Accept</a>
                     <a id="reject">Reject</a>
@@ -131,7 +146,8 @@
                 <img src="../../../assets/images/shubham.jpg" alt="user image" />
             </div>
             <div class="notification-msg">
-                <small><span>Shubham Burghate</span> is requesting to play in cricket tournament</small>
+                <small><span>Shubham Burghate</span> is requesting to play in cricket
+                    tournament</small>
                 <div class="notification-btn">
                     <a id="accept">Accept</a>
                     <a id="reject">Reject</a>
@@ -143,17 +159,29 @@
                 <img src="../../../assets/images/shubham.jpg" alt="user image" />
             </div>
             <div class="notification-msg">
-                <small><span>Shubham Burghate</span> is requesting to play in cricket tournament</small>
+                <small><span>Shubham Burghate</span> is requesting to play in cricket
+                    tournament</small>
                 <div class="notification-btn">
                     <a id="accept">Accept</a>
                     <a id="reject">Reject</a>
                 </div>
             </div>
-        </div> -->
+        </div>
+        <div class="notification-content">
+            <div class="user-image">
+                <img src="../../../assets/images/shubham.jpg" alt="user image" />
+            </div>
+            <div class="notification-msg">
+                <small><span>Shubham Burghate</span> is requesting to play in cricket
+                    tournament</small>
+                <div class="notification-btn">
+                    <a id="accept">Accept</a>
+                    <a id="reject">Reject</a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-
-
 
 <!-- 
 <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #e3f2fd;">
@@ -183,7 +211,7 @@
     </div>
 </nav> -->
 
-    <!-- <nav class="navbar navbar-expand-sm navbar-light bg-primary">
+<!-- <nav class="navbar navbar-expand-sm navbar-light bg-primary">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">primary</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarID"
