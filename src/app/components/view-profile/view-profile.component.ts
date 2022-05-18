@@ -24,7 +24,9 @@ export class ViewProfileComponent implements OnInit {
       if(this.eventId?.nativeElement.value!=1){
         this._userAuth.requestPlayer(this._activeRouter.snapshot.params['playerId'],this.teamId,this.eventId?.nativeElement.value).subscribe(data=>{
           alert("request send");
-          console.log(data)
+          console.log(data);
+          window.location.reload();
+
         })
       }
       else{
@@ -51,14 +53,18 @@ export class ViewProfileComponent implements OnInit {
         for(let request of this.player.request){
           if((event._id==request.tournamentId._id)&&(this.teamId==request.teamId._id)){
             flag=false;
-            // window.location.reload();
+            
             
                   }
                 }
 
-        if(flag){this.tournaments.push({name:event.tournamentName,_id:event._id});
-        console.log(this.tournaments)}
+        if(flag){
+          this.tournaments.push({name:event.tournamentName,_id:event._id});
+        
       }
+      }
+      console.log(this.tournaments)
+    
     })
   }
 

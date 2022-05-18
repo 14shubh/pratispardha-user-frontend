@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { UserAuthService } from 'src/app/services/user-auth.service';
 import { User} from '../../model/user'
 
@@ -12,7 +13,7 @@ import { User} from '../../model/user'
 export class SignupComponent implements OnInit {
   user:User = new User('','','','','','','','','','','','','','');
 
-  constructor(private _userAuth: UserAuthService, private _router: Router) { }
+  constructor(private _userAuth: UserAuthService,private toast:ToastrService, private _router: Router) { }
 
   public playerType(event:any){
      this.user.playerType = event.target.value;
@@ -27,7 +28,7 @@ export class SignupComponent implements OnInit {
     console.log(this.user);
     this._userAuth.register(this.user).subscribe((data)=>{
       console.log(data);
-      alert("Success");
+      this.toast.success("Signup Success")
     },(err)=>{
       console.log(err);
     })

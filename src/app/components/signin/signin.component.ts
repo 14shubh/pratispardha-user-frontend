@@ -4,6 +4,7 @@ import { UserAuthService } from 'src/app/services/user-auth.service';
 import { User } from '../../model/user'
 import {SocialAuthService,GoogleLoginProvider} from 'angularx-social-login'
 import { HttpErrorResponse } from '@angular/common/http';
+import { ToastrService } from 'ngx-toastr';
  
 @Component({
   selector: 'app-signin',
@@ -12,7 +13,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class SigninComponent implements OnInit {
  
-  constructor(private _userAuth: UserAuthService, private _router: Router,private socialService:SocialAuthService) { }
+  constructor(private _userAuth: UserAuthService, private Toast:ToastrService,private _router: Router,private socialService:SocialAuthService) { }
  
   public sign_up_page(){
     this._router.navigate(['/sign-up']);
@@ -27,10 +28,15 @@ export class SigninComponent implements OnInit {
     sessionStorage.setItem('jwt_token',data.token);
         sessionStorage.setItem('UserLoginId',data.result._id);
         sessionStorage.setItem('user-profile',JSON.stringify(data.result))
-       
+        this.Toast.success("login success")
+        console.log(data)
          this._router.navigate(['home']);
-      }else{
+      }else if(data.status=="401"){
+        this.Toast.error("Invalid Credentials");
         console.log("not found")
+      }
+      else{
+        this.Toast.error("Invalid Credentials")
       }
     },err=>{
       if(err instanceof HttpErrorResponse){

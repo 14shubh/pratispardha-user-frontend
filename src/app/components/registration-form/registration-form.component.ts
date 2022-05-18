@@ -13,7 +13,7 @@ export class RegistrationFormComponent implements OnInit {
  name:string='';email:string='';mobile:string='';
    constructor(private ngZone:NgZone ,private activateRouter:ActivatedRoute,private userAuth:UserAuthService,private router:Router) {
   }
-   public   ragisterForTournament(){
+   public   async ragisterForTournament(){
      console.log(this.userId)
      console.log(this.eventId)
      console.log(this.teamId)
@@ -21,68 +21,88 @@ export class RegistrationFormComponent implements OnInit {
         if((this.tournamentDates.indexOf(this.eventData.tournamentStartDate.toString()))==(-1)){
           if((this.eventData.tournamentApplyDate)<=(new Date().getTime())){
             if((this.eventData.tournamentEndDate)>=(new Date().getTime())){
-              console.log(sessionStorage.getItem('UserLoginId'))
-    this.userAuth.createOrder(this.eventData.tournamentFees).subscribe(data=>{
-      console.log(data);
-      var options = {
-        "key": "rzp_test_gdzLmWFRzOIDAm",// Enter the Key ID generated from the Dashboardr
-        "amount": "1000", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
-        "currency": "INR",
-        "name": "Acme Corp",
-        "description": "Test Transaction",
-        "image": "https://example.com/your_logo",
-        "order_id": data.id,
-      'handler':async (response:any)=>{
-        if(!this.flag){
-        await  this.userAuth.createTeam(this.teamName,this.userId).subscribe(data=>{
-          alert("created")
-          console.log(data)
-          this.teamId=data._id;
-          this.flag=true;
+              console.log(sessionStorage.getItem('UserLoginId'));
+              if(!this.flag){
+                        await  this.userAuth.createTeam(this.teamName,this.userId).subscribe(data=>{
+                          alert("created")
+                          console.log(data)
+                          this.teamId=data._id;
+                          this.flag=true;
+                 
+                        this.userAuth.applyForTournament(this.teamId,this.eventId).subscribe(data=>{
+                          alert("success");
+                          //this.router.navigate(['home',true]);
+                          window.location.href ="http://localhost:4200/home";
+                         });
+                })
+                        }else{
+                        this.userAuth.applyForTournament(this.teamId,this.eventId).subscribe(data=>{
+                          alert("success....");
+                          //this.router.navigate(['home',true]);
+                          window.location.href ="http://localhost:4200/home";
+                        })
+                      }
+//     this.userAuth.createOrder(this.eventData.tournamentFees).subscribe(data=>{
+//       console.log(data);
+//       var options = {
+//         "key": "rzp_test_gdzLmWFRzOIDAm",// Enter the Key ID generated from the Dashboardr
+//         "amount": "1000", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+//         "currency": "INR",
+//         "name": "Acme Corp",
+//         "description": "Test Transaction",
+//         "image": "https://example.com/your_logo",
+//         "order_id": data.id,
+//       'handler':async (response:any)=>{
+//         if(!this.flag){
+//         await  this.userAuth.createTeam(this.teamName,this.userId).subscribe(data=>{
+//           alert("created")
+//           console.log(data)
+//           this.teamId=data._id;
+//           this.flag=true;
  
-        this.userAuth.applyForTournament(this.teamId,this.eventId).subscribe(data=>{
-          alert("success");
-          //this.router.navigate(['home',true]);
-          window.location.href ="http://localhost:4200/home";
-         });
-})
-        }else{
-        this.userAuth.applyForTournament(this.teamId,this.eventId).subscribe(data=>{
-          alert("success....");
-          //this.router.navigate(['home',true]);
-          window.location.href ="http://localhost:4200/home";
-        })
-      }
- },
+//         this.userAuth.applyForTournament(this.teamId,this.eventId).subscribe(data=>{
+//           alert("success");
+//           //this.router.navigate(['home',true]);
+//           window.location.href ="http://localhost:4200/home";
+//          });
+// })
+//         }else{
+//         this.userAuth.applyForTournament(this.teamId,this.eventId).subscribe(data=>{
+//           alert("success....");
+//           //this.router.navigate(['home',true]);
+//           window.location.href ="http://localhost:4200/home";
+//         })
+//       }
+//  },
  
-        "prefill": {
-            "name": this.name,
-            "email": this.email,
-            "contact": this.mobile
-        },
-        "notes": {
-            "address": "Razorpay Corporate Office"
-        },
-        "theme": {
-            "color": "#3399cc"
-        }
+//         "prefill": {
+//             "name": this.name,
+//             "email": this.email,
+//             "contact": this.mobile
+//         },
+//         "notes": {
+//             "address": "Razorpay Corporate Office"
+//         },
+//         "theme": {
+//             "color": "#3399cc"
+//         }
  
-    };
+//     };
  
  
-    var rzp1 = new  Razorpay(options);
-    rzp1.on('payment.failed', function (response: { error: { code: any; description: any; source: any; step: any; reason: any; metadata: { order_id: any; payment_id: any; }; }; }){
-      alert(response.error.code);
-      alert(response.error.description);
-      alert(response.error.source);
-      alert(response.error.step);
-      alert(response.error.reason);
-      alert(response.error.metadata.order_id);
-      alert(response.error.metadata.payment_id);
-});
-    rzp1.open()
+//     var rzp1 = new  Razorpay(options);
+//     rzp1.on('payment.failed', function (response: { error: { code: any; description: any; source: any; step: any; reason: any; metadata: { order_id: any; payment_id: any; }; }; }){
+//       alert(response.error.code);
+//       alert(response.error.description);
+//       alert(response.error.source);
+//       alert(response.error.step);
+//       alert(response.error.reason);
+//       alert(response.error.metadata.order_id);
+//       alert(response.error.metadata.payment_id);
+// });
+//     rzp1.open()
  
-  })
+//   })
             }
             else
             alert("Ragistration Closed");

@@ -32,7 +32,10 @@ export class HomeComponent implements OnInit{
       //   }
       // })
    }
- 
+   
+  public AllEvents(){
+    this._router.navigate(['event'])
+  }
   public read(eventId:string){
     console.log(eventId);
     this._router.navigate(['event-details/'+eventId]);

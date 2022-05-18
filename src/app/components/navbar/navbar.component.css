@@ -114,6 +114,7 @@
 }
 
 /* Notification Panel Styles */
+
 ::-webkit-scrollbar{
     width: 10px;
     border-radius: 15px;
@@ -148,6 +149,7 @@
 }
 .notification-panel{
     max-width: 450px;
+    width: 100%;
     position: absolute;
     right: 15px;
     top: 70px;
@@ -219,13 +221,20 @@
     margin-bottom: 15px;
 }
 .notification-view .notification-content .user-image{
-    height: 40px;
+    max-height: 45px;
     max-width: 40px;
-    width: 100%;
+    box-shadow: 0 0 5px #0000003b;
+    border-radius: 4px;
+    padding: 2px 2px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
 }
 .notification-view .notification-content .user-image img{
     height: 100%;
     width: 100%;
+    
     border-radius:7px;
     -webkit-border-radius:7px;
     -moz-border-radius:7px;
@@ -237,6 +246,11 @@
 }
 .notification-view .notification-content .notification-msg small{
     letter-spacing: 1px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: pre-line;
+    font-size: 13px;
+    
 }
 .notification-view .notification-content .notification-msg small span{
     font-weight: 600;

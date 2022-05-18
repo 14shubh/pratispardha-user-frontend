@@ -5,14 +5,14 @@
   </div>
 
   <div class="search_bar">
-    <input type="search" placeholder="search Player..." class="search">
+    <input type="search"  [(ngModel)]="term" placeholder="search Player..." class="search">
     <!-- <i class="fa fa-search" aria-hidden="true"></i> -->
     <a class="search-btn">Search</a>
   </div>
 
   <div class="row cards">
     <div class="col-lg-2 col-md-3 col-6 player-card" *ngFor="
-        let Players of playerList
+        let Players of playerList | filter:term
           | paginate
             : {
                 itemsPerPage: cardSize,
@@ -22,7 +22,7 @@
       ">
       <div class="card">
         <div class="card-img">
-          <img src="../../../assets/images/player_1.png" class="card-img-top img-fluid" alt="player image" />
+          <img src="{{Players.image}}" class="card-img-top img-fluid" alt="player image" />
         </div>
         <div class="player-type">
           <small>{{ Players.playerType }}</small>
@@ -41,3 +41,4 @@
     </pagination-controls>
   </div>
 </div>
+<ngx-spinner type="ball-scale-multiple" style="color: blue; background-color:whitesmoke;">Loading ...</ngx-spinner>

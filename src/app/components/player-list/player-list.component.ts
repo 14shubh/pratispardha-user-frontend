@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import {Ng2SearchPipe} from 'ng2-search-filter'
+import { NgxSpinnerService } from 'ngx-spinner';
 import { DataTransferService } from 'src/app/services/data-transfer.service';
 import { UserAuthService } from 'src/app/services/user-auth.service';
 
@@ -10,16 +12,17 @@ import { UserAuthService } from 'src/app/services/user-auth.service';
 })
 export class PlayerListComponent implements OnInit {
 
-
+  searchTerm='';
+  term=''
   page: number = 1;
   count: number = 0;
-  cardSize: number = 18;
-
-
+  cardSize: number = 18
   playerList:any;
-  constructor(private _userAuth: UserAuthService, private _router: Router,private dataTransfer:DataTransferService) { 
+  constructor(private _userAuth: UserAuthService,private Spin:NgxSpinnerService, private _router: Router,private dataTransfer:DataTransferService) { 
+    this.Spin.show()
     this._userAuth.playerList().subscribe(data =>{
       this.playerList = data
+      this.Spin.hide()
       },err => {
         console.log(err);
       }) 

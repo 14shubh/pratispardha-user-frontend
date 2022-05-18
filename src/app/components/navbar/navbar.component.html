@@ -73,110 +73,18 @@
 <div class="notification-panel" #notification id="notification">
     <div class="notification-title sticky-top">
         <h2>Notifications</h2>
-        <span>Clear all</span>
+        <span (click)="clearAll()">Clear all</span>
     </div>
     <div class="notification-view">
-        <div class="notification-content">
+        <div class="notification-content" *ngFor="let Notify of noticfication as i">
             <div class="user-image">
-                <img src="../../../assets/images/shubham.jpg" alt="user image" />
+                <img src="{{Notify.ownerImage}}" alt="user image" />
             </div>
             <div class="notification-msg">
-                <small><span>Shubham Burghate</span> is requesting to play in cricket
-                    tournament</small>
+                <small><span>{{Notify.ownerName}}</span> is requesting to play in <span>{{Notify.eventName}}</span> tournament</small>
                 <div class="notification-btn">
-                    <a id="accept">Accept</a>
-                    <a id="reject">Reject</a>
-                </div>
-            </div>
-        </div>
-        <div class="notification-content">
-            <div class="user-image">
-                <img src="../../../assets/images/shubham.jpg" alt="user image" />
-            </div>
-            <div class="notification-msg">
-                <small><span>Shubham Burghate</span> is requesting to play in cricket
-                    tournament</small>
-                <div class="notification-btn">
-                    <a id="accept">Accept</a>
-                    <a id="reject">Reject</a>
-                </div>
-            </div>
-        </div>
-        <div class="notification-content">
-            <div class="user-image">
-                <img src="../../../assets/images/shubham.jpg" alt="user image" />
-            </div>
-            <div class="notification-msg">
-                <small><span>Shubham Burghate</span> is requesting to play in cricket
-                    tournament</small>
-                <div class="notification-btn">
-                    <a id="accept">Accept</a>
-                    <a id="reject">Reject</a>
-                </div>
-            </div>
-        </div>
-        <div class="notification-content">
-            <div class="user-image">
-                <img src="../../../assets/images/shubham.jpg" alt="user image" />
-            </div>
-            <div class="notification-msg">
-                <small><span>Shubham Burghate</span> is requesting to play in cricket
-                    tournament</small>
-                <div class="notification-btn">
-                    <a id="accept">Accept</a>
-                    <a id="reject">Reject</a>
-                </div>
-            </div>
-        </div>
-        <div class="notification-content">
-            <div class="user-image">
-                <img src="../../../assets/images/shubham.jpg" alt="user image" />
-            </div>
-            <div class="notification-msg">
-                <small><span>Shubham Burghate</span> is requesting to play in cricket
-                    tournament</small>
-                <div class="notification-btn">
-                    <a id="accept">Accept</a>
-                    <a id="reject">Reject</a>
-                </div>
-            </div>
-        </div>
-        <div class="notification-content">
-            <div class="user-image">
-                <img src="../../../assets/images/shubham.jpg" alt="user image" />
-            </div>
-            <div class="notification-msg">
-                <small><span>Shubham Burghate</span> is requesting to play in cricket
-                    tournament</small>
-                <div class="notification-btn">
-                    <a id="accept">Accept</a>
-                    <a id="reject">Reject</a>
-                </div>
-            </div>
-        </div>
-        <div class="notification-content">
-            <div class="user-image">
-                <img src="../../../assets/images/shubham.jpg" alt="user image" />
-            </div>
-            <div class="notification-msg">
-                <small><span>Shubham Burghate</span> is requesting to play in cricket
-                    tournament</small>
-                <div class="notification-btn">
-                    <a id="accept">Accept</a>
-                    <a id="reject">Reject</a>
-                </div>
-            </div>
-        </div>
-        <div class="notification-content">
-            <div class="user-image">
-                <img src="../../../assets/images/shubham.jpg" alt="user image" />
-            </div>
-            <div class="notification-msg">
-                <small><span>Shubham Burghate</span> is requesting to play in cricket
-                    tournament</small>
-                <div class="notification-btn">
-                    <a id="accept">Accept</a>
-                    <a id="reject">Reject</a>
+                    <a (click)="acceptRequest(Notify)"id="accept">Accept</a>
+                    <a id="reject" (click)="reject(Notify._id, i)">Reject</a>
                 </div>
             </div>
         </div>

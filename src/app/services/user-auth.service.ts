@@ -9,8 +9,8 @@ import { User } from '../model/user';
   providedIn: 'root'
 })
 export class UserAuthService {
- serverUrl:string="https://spardhaa.herokuapp.com"
- 
+//  serverUrl:string="https://spardhaa.herokuapp.com"
+serverUrl:string="http://localhost:3000"
   constructor(private _http:HttpClient) { }
  
   public register(user:User):Observable<User> {
@@ -35,7 +35,7 @@ export class UserAuthService {
     let url=this.serverUrl + "/update-profile"
     return this._http.post<any>(url,user);
   }
-  public viewProfile(playerId:string):Observable<any>{
+  public viewProfile(playerId:any):Observable<any>{
     let url=this.serverUrl + "/view-profile/"+playerId;
     return this._http.get<any>(url);
   }
@@ -43,12 +43,12 @@ export class UserAuthService {
     let url=this.serverUrl + "/request-player/"+playerId+"/"+teamId+"/"+tournamentId;
     return this._http.get<any>(url);
   }
-  public acceptRequest(user:User):Observable<any>{
-    let url=this.serverUrl + "/accept-request/"+user.playerId+"/"+user.resquestId+"/"+user.teamId+"/"+user.tournamentId;
+  public acceptRequest(playerId:any,requestId:any, teamId:any, tournamentId:any):Observable<any>{
+    let url=this.serverUrl + "/accept-request/"+playerId+"/"+requestId+"/"+teamId+"/"+tournamentId;
     return this._http.get<any>(url);
   }
-  public rejectRequest(user:User):Observable<any>{
-    let url=this.serverUrl + "/reject-request/"+user.playerId+"/"+user.resquestId;
+  public rejectRequest(playerId:any, resquestId:string):Observable<any>{
+    let url=this.serverUrl + "/reject-request/"+playerId+"/"+resquestId;
     return this._http.get<any>(url);
   }
   public createTeam(name:string,owmerId:string):Observable<any>{
