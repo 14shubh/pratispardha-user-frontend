@@ -74,7 +74,6 @@ export class NavbarComponent implements OnInit {
       
      }
      else{
-       alert("Tournament has Ended")
        this.toast.warning("Tournament has Ended")
      }
    }
@@ -92,7 +91,6 @@ export class NavbarComponent implements OnInit {
         console.log(err);
        })
      }
-     
    }
     public clearAll(){
       this.noticfication = [];

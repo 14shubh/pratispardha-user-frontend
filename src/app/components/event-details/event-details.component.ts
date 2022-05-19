@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { UserAuthService } from 'src/app/services/user-auth.service';
 
 @Component({
@@ -10,15 +11,19 @@ import { UserAuthService } from 'src/app/services/user-auth.service';
 export class EventDetailsComponent implements OnInit {
   event:any;
 
-  constructor(private _activeRouter:ActivatedRoute,private _userAuth:UserAuthService, private _router:Router) {
+  constructor(private _activeRouter:ActivatedRoute,
+   public spin: NgxSpinnerService,
+      private _userAuth:UserAuthService, private _router:Router) {
+        this.spin.show()
      this._userAuth.viewTournamentById(this._activeRouter.snapshot.params['eventId']).subscribe(data=>{
+       this.spin.hide();
        console.log(data);
            this.event=data;
      })
     
   }
   public register(eventId:string){
-    this._router.navigate(['registration-form/'+eventId+"/"+localStorage.getItem('UserLoginId')]);
+    this._router.navigate(['registration-form/'+eventId+"/"+sessionStorage.getItem('UserLoginId')]);
   }
   ngOnInit(): void {
   }

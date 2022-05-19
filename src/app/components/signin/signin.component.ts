@@ -41,7 +41,8 @@ export class SigninComponent implements OnInit {
     },err=>{
       if(err instanceof HttpErrorResponse){
           if(err.status==500)
-            window.alert("Internal Server Error");
+            // window.alert("Internal Server Error");
+            this.Toast.warning("Internal Server Error")
       }
     })
   }
@@ -56,10 +57,12 @@ export class SigninComponent implements OnInit {
           sessionStorage.setItem('UserLoginId',userData.result._id);
            this._router.navigate(['home']);
         }else{
-          alert("not found");
+          // alert("not found");
+          this.Toast.error("Not Found")
         }
         },err=>{
-          alert("Email not found please Sign up");
+          // alert("Email not found please Sign up");
+          this.Toast.error('Email Not Found Please Sign up')
           this._router.navigate(["sign-up"]);
         })
     })

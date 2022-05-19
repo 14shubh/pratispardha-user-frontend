@@ -39,7 +39,7 @@
       </div>
 
       <div class="register-btn">
-        <a class="register"  (click)="register(event.Id)">Register</a>
+        <a class="register"  (click)="register(event._id)">Register</a>
       </div>
     </div>
   </div>
@@ -85,9 +85,9 @@
       </div>
       <div class="content">
         <span>
-          1. winning team : cash prize {{event.prizeAmount}}/- +  designer trophy.<br>
-          2. Runner’s team : cash prize {{event.prizeAmount*(3/4)}}/- +  designer trophy.<br> 
-          3. Semi finalist : cash prize {{event.prizeAmount/2}}/- + Designer trophy. <br>
+          1. winning team : cash prize ₹ {{event.firstPrize}}/- and  designer trophy.<br>
+          2. Runner’s team : cash prize ₹ {{event.secondPrize}}/- and designer trophy.<br> 
+          3. Semi finalist : cash prize ₹ {{event.thirdPrize}}/- and Designer trophy. <br>
         </span>
       </div>
     </div>

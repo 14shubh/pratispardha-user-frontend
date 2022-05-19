@@ -5,6 +5,7 @@
   </div>
 
   <div class="search_bar">
+    <i  (click)="voice()"class="fa fa-microphone" aria-hidden="true"></i>
     <input type="search"  [(ngModel)]="term" placeholder="search Player..." class="search">
     <!-- <i class="fa fa-search" aria-hidden="true"></i> -->
     <a class="search-btn">Search</a>
@@ -41,4 +42,4 @@
     </pagination-controls>
   </div>
 </div>
-<ngx-spinner type="ball-scale-multiple" style="color: blue; background-color:whitesmoke;">Loading ...</ngx-spinner>
+<!-- <ngx-spinner type="ball-scale-multiple" style="color: blue; background-color:whitesmoke;">Loading ...</ngx-spinner> -->

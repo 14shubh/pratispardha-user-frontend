@@ -80,7 +80,7 @@
               </div>
               <div class="overlay-btn">
                 <a class="read-more-btn"  (click)="read(Event._id)">Read More</a>
-                <a class="register-btn" (click)="register(Event._id)">Register</a>
+                <a class="register-btn" (click)="register(Event)">Register</a>
               </div>
             </div>
           </div>
@@ -185,3 +185,5 @@ Cricket World Cup twice (1983 and 2011), the ICC T20 World Cup once (2007) and t
     <span class="visually-hidden">Next</span>
   </button>
 </div>
+
+<ngx-spinner type="ball-scale-multiple" style="color: rgb(0, 0, 0); background-color:whitesmoke;">Loading ...</ngx-spinner>

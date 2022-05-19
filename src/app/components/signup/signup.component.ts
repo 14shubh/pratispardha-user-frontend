@@ -24,7 +24,8 @@ export class SignupComponent implements OnInit {
   }
   public SignUp(){
     if(this.user.playerType=="0")
-     alert("Please Select the type")
+    //  alert("Please Select the type")
+    this.toast.info("Please Select The Type")
     console.log(this.user);
     this._userAuth.register(this.user).subscribe((data)=>{
       console.log(data);

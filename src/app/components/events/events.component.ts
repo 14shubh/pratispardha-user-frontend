@@ -2,6 +2,7 @@ import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Route, Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { ToastrService } from 'ngx-toastr';
 import { UserAuthService } from 'src/app/services/user-auth.service';
 
 @Component({
@@ -23,16 +24,35 @@ export class EventsComponent implements OnInit {
     private _auth: UserAuthService,
     public spin: NgxSpinnerService,
     public _date_pipe: DatePipe,
-    private _router: Router
+    
+  
+    private _router: Router,
+    private toast:ToastrService
   ) {}
 
   public read(eventId:string){
     console.log(eventId);
     this._router.navigate(['event-details/'+eventId]);
   }
-  public register(eventId:string){
-    
-    this._router.navigate(['registration-form/'+eventId+"/"+sessionStorage.getItem('UserLoginId')]);
+  public register(event:any){
+    console.log(event)
+    if((event.tournamentStartDate)>(new Date().getTime())){
+    if((event.tournamentApplyDate)<(new Date().getTime())){
+      if((event.tournamentEndDate)>(new Date().getTime())){
+
+        this._router.navigate(['registration-form/'+event._id+"/"+sessionStorage.getItem('UserLoginId')]);
+      }
+      else
+      this.toast.warning("Registration Closed");
+
+
+    }
+    else
+      this.toast.info("Registration Is Not Start");
+    }
+    else
+    this.toast.error("Tournament is Ended")
+
   }
 
   ngOnInit(): void {
