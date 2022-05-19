@@ -18,118 +18,84 @@ export class RegistrationFormComponent implements OnInit {
     
     private toast:ToastrService,private activateRouter:ActivatedRoute,private userAuth:UserAuthService,private router:Router) {
   }
-   public   async ragisterForTournament(){
-     console.log(this.userId)
-     console.log(this.eventId)
-     console.log(this.teamId)
-    if((this.tournamentIds.indexOf(this.eventId))==(-1)){
-        if((this.tournamentDates.indexOf(this.eventData.tournamentStartDate.toString()))==(-1)){
-          if((this.eventData.tournamentApplyDate)<=(new Date().getTime())){
-            if((this.eventData.tournamentEndDate)>=(new Date().getTime())){
-              console.log(sessionStorage.getItem('UserLoginId'));
-              // if(!this.flag){
-              //           await  this.userAuth.createTeam(this.teamName,this.userId).subscribe(data=>{
-              //             // alert("created")
-              //             this.toast.info("Created");
+    
+public   async ragisterForTournament(){
+  if((this.tournamentIds.indexOf(this.eventId))==(-1)){
+      if((this.tournamentDates.indexOf(this.eventData.tournamentStartDate.toString()))==(-1)){
+        if((this.eventData.tournamentApplyDate)<=(new Date().getTime())){
+          if((this.eventData.tournamentEndDate)>=(new Date().getTime())){
+            // this.userAuth.createOrder(this.eventData.tournamentFees).subscribe(data=>{
+            //   var options = {
+            //     "key": "rzp_test_k45BWvh7O4E1Os",
+            //     "amount": "1000",
+            //     "currency": "INR",
+            //     "name": "Acme Corp",
+            //     "description": "Test Transaction",
+            //     "image": "https://example.com/your_logo",
+            //     "order_id": data.id,
+            //   'handler':async (response:any)=>{
 
-              //             console.log(data)
-              //             this.teamId=data._id;
-              //             this.flag=true;
-                 
-              //           this.userAuth.applyForTournament(this.teamId,this.eventId).subscribe(data=>{
-              //             this.toast.success("Success");
+            if(!this.flag){
+                      await  this.userAuth.createTeam(this.teamName,this.userId).subscribe(data=>{
+                        this.toast.info("Created");
+                        this.teamId=data._id;
+                        this.flag=true;
+                      this.userAuth.applyForTournament(this.teamId,this.eventId).subscribe(data=>{
+                        this.toast.success("Success");
+                        window.location.href ="http://localhost:4200/home";
+                       });
+              })
+                      }else{
+                      this.userAuth.applyForTournament(this.teamId,this.eventId).subscribe(data=>{
+                        this.toast.success("Success");
+                        window.location.href ="http://localhost:4200/home";
+                      })
+                    }
 
-              //             //this.router.navigate(['home',true]);
-              //             window.location.href ="http://localhost:4200/home";
-              //            });
-              //   })
-              //           }else{
-              //           this.userAuth.applyForTournament(this.teamId,this.eventId).subscribe(data=>{
-              //             this.toast.success("Success");
-              //             //this.router.navigate(['home',true]);
-              //             window.location.href ="http://localhost:4200/home";
-              //           })
-              //         }
-    this.userAuth.createOrder(this.eventData.tournamentFees).subscribe(data=>{
-      console.log(data);
-      var options = {
-        "key": "rzp_test_gdzLmWFRzOIDAm",// Enter the Key ID generated from the Dashboardr
-        "amount": "1000", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
-        "currency": "INR",
-        "name": "Acme Corp",
-        "description": "Test Transaction",
-        "image": "https://example.com/your_logo",
-        "order_id": data.id,
-      'handler':async (response:any)=>{
-        if(!this.flag){
-        await  this.userAuth.createTeam(this.teamName,this.userId).subscribe(data=>{
-          alert("created")
-          console.log(data)
-          this.teamId=data._id;
-          this.flag=true;
- 
-        this.userAuth.applyForTournament(this.teamId,this.eventId).subscribe(data=>{
-          alert("success");
-          //this.router.navigate(['home',true]);
-          window.location.href ="http://localhost:4200/home";
-         });
-})
-        }else{
-        this.userAuth.applyForTournament(this.teamId,this.eventId).subscribe(data=>{
-          alert("success....");
-          //this.router.navigate(['home',true]);
-          window.location.href ="http://localhost:4200/home";
-        })
-      }
- },
- 
-        "prefill": {
-            "name": this.name,
-            "email": this.email,
-            "contact": this.mobile
-        },
-        "notes": {
-            "address": "Razorpay Corporate Office"
-        },
-        "theme": {
-            "color": "#3399cc"
-        }
- 
-    };
- 
- 
-    var rzp1 = new  Razorpay(options);
-    rzp1.on('payment.failed', function (response: { error: { code: any; description: any; source: any; step: any; reason: any; metadata: { order_id: any; payment_id: any; }; }; }){
-      alert(response.error.code);
-      alert(response.error.description);
-      alert(response.error.source);
-      alert(response.error.step);
-      alert(response.error.reason);
-      alert(response.error.metadata.order_id);
-      alert(response.error.metadata.payment_id);
-});
-    rzp1.open()
- 
-  })
-            }
-            else
-            // alert("Ragistration Closed");
-            this.toast.warning("Registration Closed");
+
+        //           },
+
+        //         "prefill": {
+        //             "name": this.name,
+        //             "email": this.email,
+        //             "contact": this.mobile
+        //         },
+        //         "notes": {
+        //             "address": "Razorpay Corporate Office"
+        //         },
+        //         "theme": {
+        //             "color": "#3399cc"
+        //         }
+
+        //     };
+
+
+        //     var rzp1 = new  Razorpay(options);
+        //     rzp1.on('payment.failed', function (response: { error: { code: any; description: any; source: any; step: any; reason: any; metadata: { order_id: any; payment_id: any; }; }; }){
+        // });
+        //     rzp1.open()
+
+        //   })
+
           }
           else
-          // alert("Ragistration is not Start");
-          this.toast.info("Registration is not Start");
+          this.toast.warning("Registration Closed");
         }
         else
-        // alert("You have already ragsitered with another tournament for this day");
-        this.toast.info("You have already registered with another tournament for this day");
-     }
-      else{
-        this.toast.info("You have already registered your team in this tournament")
+        this.toast.info("Registration is not Start");
       }
-      // alert("You have already ragistered your team in this tournament")
- 
-  }
+      else
+      this.toast.info("You have already registered with another tournament for this day");
+   }
+    else{
+      this.toast.info("You have already registered your team in this tournament")
+    }
+}
+
+
+
+
+
  
   ngOnInit(): void {
     this.spin.show();
