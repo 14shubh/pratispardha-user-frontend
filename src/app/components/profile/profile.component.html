@@ -1,0 +1,32 @@
+<div class="profile">
+    <div class="header">
+        <div class="name">
+            <h2>{{UserProfile.name}}</h2>
+            <span>{{UserProfile.playerType}}</span>
+        </div>
+        <div class="update-btn">
+            <a href="#" class="update">Profile Update</a>
+        </div>
+    </div>
+    <span class="bottom-border"></span>
+    <div class="profile-content">
+        <div class="text form-group">
+            <input [value]="UserProfile.email" type="text" class="form-control" placeholder="Email">
+        </div>
+        <div class="text form-group">
+            <input [value]="UserProfile.mobile" type="text" class="form-control" placeholder="Mobile">
+        </div>
+        <div class="text form-group">
+            <input [value]="UserProfile.playerType" type="text" class="form-control" placeholder="PlayerType">
+        </div>
+        <div class="text form-group">
+            <input [value]="UserProfile.age" type="text" class="form-control" placeholder="Age">
+        </div>
+        <div class="text form-group">
+            <input [value]="UserProfile.address" type="text" class="form-control" placeholder="Address">
+        </div>
+        <div class="text form-group">
+            <input [value]="UserProfile.description" type="text" class="form-control" placeholder="description">
+        </div>
+    </div>
+</div>

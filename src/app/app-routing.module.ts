@@ -12,6 +12,10 @@ import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { RegistrationFormComponent } from './components/registration-form/registration-form.component';
 import { HomComponent } from './components/hom/hom.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { UpdateProfileComponent } from './components/update-profile/update-profile.component';
+import { AuthGuard } from './auth.guard';
 
 
 const routes: Routes = [
@@ -59,10 +63,30 @@ const routes: Routes = [
   {
     path:'registration-form/:eventId/:userId',
     component: RegistrationFormComponent,
+    canActivate:[AuthGuard]
   },
   {
     path:'hom',
     component:HomComponent
+  },
+  {
+    path:'profile',
+    component:UserProfileComponent,
+    children: [
+      {
+        path:'',
+        component:ProfileComponent
+      },
+      {
+        path:'profile',
+        component:ProfileComponent
+      },
+      {
+        path:'update-profile',
+        component:UpdateProfileComponent
+      }
+    ],
+    canActivate:[AuthGuard]
   },
   {
     path:'**',

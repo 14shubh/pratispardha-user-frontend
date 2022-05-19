@@ -288,5 +288,5 @@
     left: -86px !important;
 }
 .dropdown .dropdown-menu ul li{
-    list-style:disc;
+    list-style:none;
 }

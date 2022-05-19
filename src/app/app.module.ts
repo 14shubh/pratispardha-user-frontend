@@ -26,6 +26,9 @@ import{Ng2SearchPipeModule} from 'ng2-search-filter'
 
 import { RegistrationFormComponent } from './components/registration-form/registration-form.component';
 import { HomComponent } from './components/hom/hom.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { UpdateProfileComponent } from './components/update-profile/update-profile.component';
 
 const socialProvider={
   provide:"SocialAuthServiceConfig",
@@ -52,7 +55,10 @@ const socialProvider={
     AboutComponent,
     ContactComponent,
     RegistrationFormComponent,
-    HomComponent
+    HomComponent,
+    UserProfileComponent,
+    ProfileComponent,
+    UpdateProfileComponent
   ],
   imports: [
     BrowserModule,
