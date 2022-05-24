@@ -79,6 +79,7 @@ export class NavbarComponent implements OnInit {
    }
 
    public reject(requestId:any, index:any){
+     alert(this.UserId);
      if(confirm('are you sure you want to reject')){
       this._user.rejectRequest(this.UserId,requestId).subscribe(data=>{
         if(data){

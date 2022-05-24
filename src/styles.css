@@ -8,15 +8,18 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-   
+    scroll-behavior: smooth;
 }
 
 :root{
     --blue-radial-gradient:radial-gradient(32.19% 4133.3% at 37.29% 50%, rgba(0, 31, 61, 0.92) 0%, rgba(2, 66, 124, 0.93) 100%);
 }
-body{
-    overflow-x: hidden;
+html{
+  overflow-x: hidden;
 }
+/* body{
+    overflow-x: hidden;
+} */
 .heading{
     text-align: center;
     width: fit-content;

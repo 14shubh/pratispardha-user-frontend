@@ -16,6 +16,7 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 import { ProfileComponent } from './components/profile/profile.component';
 import { UpdateProfileComponent } from './components/update-profile/update-profile.component';
 import { AuthGuard } from './auth.guard';
+import { TournamentHistoryComponent } from './components/tournament-history/tournament-history.component';
 
 
 const routes: Routes = [
@@ -87,6 +88,10 @@ const routes: Routes = [
       }
     ],
     canActivate:[AuthGuard]
+  },
+  {
+    path:'tournament-histroy',
+    component:TournamentHistoryComponent
   },
   {
     path:'**',

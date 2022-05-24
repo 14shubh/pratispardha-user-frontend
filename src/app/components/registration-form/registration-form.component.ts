@@ -121,9 +121,10 @@ public   async ragisterForTournament(){
             this.teamName=data[0].name;
             this.teamId=data[0]._id;
             this.flag=true;
-            this.spin.hide()
+            
       console.log("team is already found")
           }
+          this.spin.hide()
         });
       });
      

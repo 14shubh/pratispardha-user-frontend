@@ -84,7 +84,17 @@
     .right-nav .nav-item .nav-link{
         font-size:12px;
     }
-    
+    .dropdown{
+        position: absolute;
+        right: 150px;
+    }
+    .dropdown #dropdownMenuLink{
+        color: #fff;
+    }
+    .dropdown #dropdownMenuLink .user-icon{
+        font-size: 25px;
+        /* color: #fff; */
+    }
 }
 @media screen and (max-width:992px){
 
@@ -111,6 +121,7 @@
         -ms-transform: scale(1.1);
         -o-transform: scale(1.1);
 }
+
 }
 
 /* Notification Panel Styles */
@@ -282,6 +293,7 @@
     -ms-transition: ease-in-out 0.1s;
     -o-transition: ease-in-out 0.1s;
 }
+
 
 .dropdown .dropdown-menu{
     top:108% !important;
