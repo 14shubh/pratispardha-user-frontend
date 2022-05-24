@@ -194,3 +194,23 @@
     color:rgb(0, 117, 226);
     text-decoration: underline;
 }
+
+@media only screen and (min-width:320px) and (max-width:567px) {
+    .right{
+        padding: 30px 20px;
+    }
+    .signin-box .left img{
+        display: none;
+    }
+    .google-sign-in .google-btn{
+      
+        font-size:14px;
+        padding: 5px 20px;
+    }
+    .google-sign-in .google-btn .fa-google {
+        font-size:18px;
+    }
+    .or p::before{
+        right: 151px;
+    }
+}  
